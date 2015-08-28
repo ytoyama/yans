@@ -1,5 +1,6 @@
 RM = rm -rf
 LATEX = lualatex
+POSTER = poster.pdf
 
 
 .SUFFIXES: .tex .pdf
@@ -8,8 +9,12 @@ LATEX = lualatex
 
 
 .PHONY: all
-all: poster.pdf
+all: ${POSTER}
 
 .PHONY: clean
 clean:
 	${RM} *.pdf *.aux *.log *.out *.nav *.toc *.snm
+
+.PHONY: view
+view: ${POSTER}
+	mupdf ${.ALLSRC}
