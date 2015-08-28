@@ -17,4 +17,4 @@ clean:
 
 .PHONY: view
 view: ${POSTER}
-	mupdf ${.ALLSRC}
+	mupdf -r 64 ${.ALLSRC}
