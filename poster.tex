@@ -1,49 +1,67 @@
 \documentclass[10pt,unicode]{beamer}
 
-\setbeamertemplate{caption}[numbered]
+% geometries
 
-% style theme
-%\usetheme{Frankfurt}
-\usetheme{CambridgeUS}
+\geometry{paper=a4paper,landscape}
 
-% overall color theme
-\usecolortheme{crane}
-%\usecolortheme{wolverine}
-%\usecolortheme{seagull}
-
-% inner theme
-\usecolortheme{lily}
-%\usecolortheme{orchid}
-%\usecolortheme{rose}
+% packages
 
 \usepackage{luatexja}
 \usepackage{amsmath}
-%\usepackage{titling}
 
-\usepackage[font=small]{caption}
+
+% colors
+
+\definecolor{airforceblue}{rgb}{0.36,0.54,0.66}
+\definecolor{ttiblue}{rgb}{0.059,0.035,0.16}
+
+
+% my beamer theme
+
+\setbeamerfont{block title}{size=\Large}
+\setbeamercolor{block title}{fg=white,bg=airforceblue}
+%\setbeamertemplate{block begin}{\insertcaption}
+%\setbeamertemplate{block end}{}
+
+\setbeamerfont{block body}{size=\normalsize}
+
 \setbeamertemplate{caption}{\insertcaption}
-%\setbeamertemplate{caption}{\raggedright\insertcaption\par}
-%\setbeamertemplate{caption}{%
-%  \begin{beamercolorbox}[wd=\columnsize, sep=0.2ex]{block body}%
-%    \raggedright\insertcaption\par%
-%  \end{beamercolorbox}%
-%}
+\setbeamerfont{caption}{size=\normalsize}
 
-\geometry{paper=a4paper,landscape}
+
+
 \newcommand{\columnsize}{0.32}
 \newcommand{\tablefontsize}{\small}
+\newcommand{\itemtitle}[1]{{\large #1} \\}
+\renewcommand{\maketitle}{
+  \vspace{-0.15ex} % HACKING
+  \centering
+  \setbeamercolor{mytitle}{fg=white,bg=ttiblue}
+  %\begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{mytitle}
+  \begin{beamercolorbox}[sep=2ex,wd=1.01\paperwidth,dp=0ex,
+      rounded=false]{mytitle}
+    \centering
+    \textbf{\huge \inserttitle}
+  \end{beamercolorbox}
+  \setbeamercolor{myauthor}{fg=black,bg=white}
+  \begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{myauthor}
+    \centering
+    \large \insertauthor \hspace{2em} \insertinstitute
+  \end{beamercolorbox}
+}
 
 
+% title setting
 \title{カテゴリ間の関連性を利用した多層ニューラルネットワークによる文書分類}
 \author{外山洋太、三輪誠、佐々木裕}
 \institute{豊田工業大学 工学部 先端工学基礎学科}
 \date{}
 
 
+
 \begin{document}
 \begin{frame}{}
 \maketitle
-\vspace{-5ex} % HACKING
 \begin{columns}[t]
 
 \begin{column}{\columnsize\textwidth} % first
@@ -61,14 +79,14 @@
     \end{itemize}
   \end{block}
 
-  \begin{block}{関連研究}
+  \begin{block}{\bf 関連研究}
     \begin{itemize}
-    \item カテゴリ間の関連性を用いた文書分類 \\
+    \item \itemtitle{カテゴリ間の関連性を用いた文書分類}
     カテゴリ間の関連性を用いた文書分類を扱った研究に、隠れ状態を用いた
     ホテルレビューのレーティング予測[1]がある。この研究では、文書内の各文に対して
     推定した隠れレーティングとレビュー全体のレーティングとの繋がりを変化させ、
     カテゴリ間の関連性を考慮した分類を行っている。
-    \item パラグラフベクトル \\
+    \item \itemtitle{パラグラフベクトル}
     　文書の数値表現の一つとして、Leら[2]が提案したパラグラフベクトルがある。
     この研究は、それが文書分類に有用であることを実験により示している。また、
     パラグラフベクトルの学習手法に関する研究として、森ら[3]がある。この研究では、
@@ -115,13 +133,13 @@
     SVMまたは多層NNを用い、従来の手法[1]と同じ多値分類問題の精度を測定
 
     \begin{itemize}
-      \item 目的 \\
+      \item \itemtitle{目的}
       \begin{itemize}
         \item パラグラフベクトルの有効性の調査
         \item 従来手法との比較による目標設定
       \end{itemize}
 
-      \item 実験設定
+      \item \itemtitle{実験設定}
       \begin{itemize}
         \item 入力データは、宿泊予約サイト楽天トラベルにおける各ホテルレビューの
         コメント部分とそのユーザが付けた食事、サービスなど7カテゴリのレーティングの
@@ -132,7 +150,7 @@
         パラグラフベクトル
       \end{itemize}
 
-      \item 結果及び考察 (表2)
+      \item \itemtitle{結果及び考察}
       \begin{itemize}
         \item 多層NNを用いた方がSVMより4.1pp精度が高い
         しかし、多層NNを用いた手法でも、従来の手法[1]における精度を10pp以上
