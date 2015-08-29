@@ -1,0 +1,45 @@
+\mode<presentation>
+
+% colors
+
+\definecolor{airforceblue}{rgb}{0.36,0.54,0.66}
+\definecolor{ttiblue}{rgb}{0.059,0.035,0.16}
+
+
+% block
+
+\setbeamerfont{block body}{size=\normalsize}
+
+\setbeamerfont{block title}{size=\Large}
+\setbeamercolor{block title}{fg=white,bg=airforceblue}
+
+%\setbeamertemplate{block begin}{\insertcaption}
+%\setbeamertemplate{block end}{}
+
+
+% caption
+
+\setbeamertemplate{caption}{\insertcaption}
+\setbeamerfont{caption}{size=\normalsize}
+
+
+% title format
+
+\renewcommand{\maketitle}{
+  \vspace{-0.15ex} % HACKING
+  \centering
+  \setbeamercolor{mytitle}{fg=white,bg=ttiblue}
+  %\begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{mytitle}
+  \begin{beamercolorbox}[sep=2ex,wd=1.01\paperwidth,dp=0ex,
+      rounded=false]{mytitle}
+    \centering
+    \textbf{\huge \inserttitle}
+  \end{beamercolorbox}
+  \setbeamercolor{myauthor}{fg=black,bg=white}
+  \begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{myauthor}
+    \centering
+    \large \insertauthor \hspace{2em} \insertinstitute
+  \end{beamercolorbox}
+}
+
+\mode<all>

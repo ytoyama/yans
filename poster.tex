@@ -1,4 +1,5 @@
 \documentclass[10pt,unicode]{beamer}
+\usetheme{ttiposter}
 
 % geometries
 
@@ -9,54 +10,18 @@
 \usepackage{luatexja}
 \usepackage{amsmath}
 
-
-% colors
-
-\definecolor{airforceblue}{rgb}{0.36,0.54,0.66}
-\definecolor{ttiblue}{rgb}{0.059,0.035,0.16}
-
-
-% my beamer theme
-
-\setbeamerfont{block title}{size=\Large}
-\setbeamercolor{block title}{fg=white,bg=airforceblue}
-%\setbeamertemplate{block begin}{\insertcaption}
-%\setbeamertemplate{block end}{}
-
-\setbeamerfont{block body}{size=\normalsize}
-
-\setbeamertemplate{caption}{\insertcaption}
-\setbeamerfont{caption}{size=\normalsize}
-
-
+% miscellaneous commands
 
 \newcommand{\columnsize}{0.32}
 \newcommand{\tablefontsize}{\small}
 \newcommand{\itemtitle}[1]{{\large #1} \\}
-\renewcommand{\maketitle}{
-  \vspace{-0.15ex} % HACKING
-  \centering
-  \setbeamercolor{mytitle}{fg=white,bg=ttiblue}
-  %\begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{mytitle}
-  \begin{beamercolorbox}[sep=2ex,wd=1.01\paperwidth,dp=0ex,
-      rounded=false]{mytitle}
-    \centering
-    \textbf{\huge \inserttitle}
-  \end{beamercolorbox}
-  \setbeamercolor{myauthor}{fg=black,bg=white}
-  \begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{myauthor}
-    \centering
-    \large \insertauthor \hspace{2em} \insertinstitute
-  \end{beamercolorbox}
-}
-
 
 % title setting
+
 \title{カテゴリ間の関連性を利用した多層ニューラルネットワークによる文書分類}
 \author{外山洋太、三輪誠、佐々木裕}
 \institute{豊田工業大学 工学部 先端工学基礎学科}
 \date{}
-
 
 
 \begin{document}
