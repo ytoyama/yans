@@ -20,12 +20,18 @@
 \usepackage{amsmath}
 %\usepackage{titling}
 
-\usepackage[font=small,labelformat=empty]{caption}
-%\setkomafont{caption}{\footnotesize\itshape}
-%\setkomafont{captionlabel}{\usekomafont{caption}}
+\usepackage[font=small]{caption}
+\setbeamertemplate{caption}{\insertcaption}
+%\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+%\setbeamertemplate{caption}{%
+%  \begin{beamercolorbox}[wd=\columnsize, sep=0.2ex]{block body}%
+%    \raggedright\insertcaption\par%
+%  \end{beamercolorbox}%
+%}
 
 \geometry{paper=a4paper,landscape}
 \newcommand{\columnsize}{0.32}
+\newcommand{\tablefontsize}{\small}
 
 
 \title{カテゴリ間の関連性を利用した多層ニューラルネットワークによる文書分類}
@@ -137,6 +143,7 @@
     \end{itemize}
 
     \begin{table}
+    \tablefontsize
     \caption{点数推定プログラムのパラメータ設定}
     \label{table:parameters}
     \begin{tabular}{l | r}
@@ -152,6 +159,7 @@
     \end{table}
 
     \begin{table}
+    \tablefontsize
     \caption{各手法における点数推定精度}
     \begin{tabular}{l | r}
     項目 & 点数推定の精度(\%) \\
