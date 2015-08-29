@@ -1,17 +1,38 @@
 \documentclass[10pt,unicode]{beamer}
-  %\usetheme{Frankfurt}
-  \usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]
+
+% style theme
+%\usetheme{Frankfurt}
+\usetheme{CambridgeUS}
+
+% overall color theme
+\usecolortheme{crane}
+%\usecolortheme{wolverine}
+%\usecolortheme{seagull}
+
+% inner theme
+\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
 
 \usepackage{luatexja}
+\usepackage{amsmath}
 %\usepackage{titling}
+
+\usepackage[font=small,labelformat=empty]{caption}
+%\setkomafont{caption}{\footnotesize\itshape}
+%\setkomafont{captionlabel}{\usekomafont{caption}}
 
 \geometry{paper=a4paper,landscape}
 \newcommand{\columnsize}{0.32}
+
 
 \title{カテゴリ間の関連性を利用した多層ニューラルネットワークによる文書分類}
 \author{外山洋太、三輪誠、佐々木裕}
 \institute{豊田工業大学 工学部 先端工学基礎学科}
 \date{}
+
 
 \begin{document}
 \begin{frame}{}
@@ -21,28 +42,33 @@
 
 \begin{column}{\columnsize\textwidth} % first
   \begin{block}{背景と目的}
-    自然言語処理の一分野である文書分類は、大量の文書処理を必要とするWWWからの
-    情報抽出等に欠かせない。その文書分類の一つに、文書を複数のカテゴリについて
-    分類するものがある。カテゴリとはラベルが付けられる各項目のことである。
-    これに関する従来の手法[1]では、カテゴリ同士の関連性を手動で変化させ
-    考慮している。また、そこで用いられている文書の数値表現であるBoWは
-    文書内の語順を無視している。
-    そこで、本研究は、よりよい文書の数値表現を用いながら、カテゴリ間の関連性を
-    機械学習によって考慮した文書分類を実現することを目的とする。
+    \begin{itemize}
+      \item 文書を複数のカテゴリについて多値分類 \\
+      （カテゴリ：ラベルが付けられる各項目のこと）
+      \item 従来の手法[1]
+        \begin{itemize}
+        \item カテゴリ同士の関連性を手動で変化させ考慮している \\
+        → 機械学習による自動化
+        \item 文書の数値表現であるBoWは文書内の語順を無視 \\
+        → パラグラフベクトルの使用により表現をより正確に
+        \end{itemize}
+    \end{itemize}
   \end{block}
 
   \begin{block}{関連研究}
-    2.1. カテゴリ間の関連性を用いた文書分類
+    \begin{itemize}
+    \item カテゴリ間の関連性を用いた文書分類 \\
     カテゴリ間の関連性を用いた文書分類を扱った研究に、隠れ状態を用いた
     ホテルレビューのレーティング予測[1]がある。この研究では、文書内の各文に対して
     推定した隠れレーティングとレビュー全体のレーティングとの繋がりを変化させ、
     カテゴリ間の関連性を考慮した分類を行っている。
-    2.2. パラグラフベクトル
+    \item パラグラフベクトル \\
     　文書の数値表現の一つとして、Leら[2]が提案したパラグラフベクトルがある。
     この研究は、それが文書分類に有用であることを実験により示している。また、
     パラグラフベクトルの学習手法に関する研究として、森ら[3]がある。この研究では、
     単語同士の位置関係を考慮した単語ベクトルの学習手法vLBL+vLBL(c)について、
     パラグラフベクトルまたは文ベクトルも同時に学習する手法を提案している。
+    \end{itemize}
   \end{block}
 \end{column} % first
 
@@ -55,9 +81,12 @@
     語順と単語同士の位置関係を考慮した文書の数値表現を生成する（図1）。
     ここで、文ベクトル学習時の目的関数gには以下の式を用いる。
 
-%    \begin{eqnarray}
-%    g = \sum_i \left{ \log\sigma(s(t)) + \sum^K_{t'~P_n} \log
-%    \end{eqnarray}
+    \begin{eqnarray*}
+      g = & \sum_t \left\{ \log\sigma(s(t))
+          + \sum^K_{t' \sim P_n} \log(1 - \sigma(s(t'))) \right\} \\
+      s(t) = & {\bf c}_t \cdot {\bf w}_t
+             + {\bf c}^{loc}_t \cdot {\bf w}^{loc}_t + b_t
+    \end{eqnarray*}
 
     tは現在の単語の位置、ctとwtはそれぞれ文脈と単語を表すベクトル、sは位置関係を
     考慮した単語と文脈の類似度である。上式により、現在の単語は文脈と意味が
@@ -75,28 +104,37 @@
 \end{column} % second
 
 \begin{column}{\columnsize\textwidth} % third
-  \begin{block}{実験}
-    目的 \\
-    　文書の数値表現としてパラグラフベクトルが有効かを調査するため予備実験を
-    行った。パラグラフベクトルの学習手法としてはvLBL+vLBL(c)を、分類器としては
-    SVMまたは多層NNを用い、従来の手法[1]と同じ多値分類問題の精度を測定した。
+  \begin{block}{予備実験}
+    パラグラフベクトルの学習手法としてvLBL+vLBL(c)を、分類器として
+    SVMまたは多層NNを用い、従来の手法[1]と同じ多値分類問題の精度を測定
 
-    4.1. 実験設定
-    入力データは、宿泊予約サイト楽天トラベルにおける各ホテルレビューの
-    コメント部分とそのユーザが付けた食事、サービスなど7カテゴリのレーティングの
-    組である。各カテゴリのレーティングは評価なしを含む6段階評価である。
-    全レビュー338,028件の内、訓練データとして300,000件、評価データとして
-    10,000件を用いた。
-    　プログラム上の主なパラメータを表1に示す。現在の単語の学習に影響する範囲を
-    その単語の前後5単語とした。単語及びパラグラフベクトルの次元は400次元とし、
-    多層NNの入力は位置を考慮した及び考慮していない2つのパラグラフベクトルとした。
+    \begin{itemize}
+      \item 目的 \\
+      \begin{itemize}
+        \item パラグラフベクトルの有効性の調査
+        \item 従来手法との比較による目標設定
+      \end{itemize}
 
-    4.2. 結果及び考察
-    　表2の実験結果より、多層NNを用いた方がSVMより4.1pp精度が高かった。
-    しかし、多層NNを用いた手法でも、従来の手法[1]における精度を10pp以上
-    下回っている。精度を高めるためには、文ベクトルとパラグラフベクトルを
-    組み合わせより表現力の高い文書の数値表現を評価することや、多層NNの
-    パラメータ最適化が必要である。
+      \item 実験設定
+      \begin{itemize}
+        \item 入力データは、宿泊予約サイト楽天トラベルにおける各ホテルレビューの
+        コメント部分とそのユーザが付けた食事、サービスなど7カテゴリのレーティングの
+        組（各カテゴリのレーティングは評価なしを含む6段階評価）
+        \item 全レビュー338,028件の内、
+        訓練データ：300,000件、評価データ：10,000件
+        \item 多層NNの入力は位置を考慮した及び考慮していない2つの
+        パラグラフベクトル
+      \end{itemize}
+
+      \item 結果及び考察 (表2)
+      \begin{itemize}
+        \item 多層NNを用いた方がSVMより4.1pp精度が高い
+        しかし、多層NNを用いた手法でも、従来の手法[1]における精度を10pp以上
+        下回っている。精度を高めるためには、文ベクトルとパラグラフベクトルを
+        組み合わせより表現力の高い文書の数値表現を評価することや、多層NNの
+        パラメータ最適化が必要である。
+      \end{itemize}
+    \end{itemize}
 
     \begin{table}
     \caption{点数推定プログラムのパラメータ設定}
@@ -115,7 +153,6 @@
 
     \begin{table}
     \caption{各手法における点数推定精度}
-    \label{table:accuracy}
     \begin{tabular}{l | r}
     項目 & 点数推定の精度(\%) \\
     \hline
