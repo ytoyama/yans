@@ -26,7 +26,8 @@
 \newcommand{\tablefontsize}{\small}
 \newcommand{\itemtitle}[1]{{\normalsize #1} \\}
 \newcommand{\arrow}{{\color{ttiblue} →}\hspace{1ex}}
-\newcommand{\notable}[1]{\textbf{\color{orange} #1}}
+\newcommand{\good}[1]{\textbf{\color{orange} #1}}
+\newcommand{\bad}[1]{\textbf{\color{blue} #1}}
 \newcommand{\keyword}[1]{\textbf{\color{red} #1}}
 
 % title setting
@@ -46,13 +47,18 @@
   \begin{block}{背景と目的}
     \begin{itemize}
       \item 文書を複数のカテゴリについて多値分類 \\
-      （カテゴリ：ラベルが付けられる各項目のこと）
+        （カテゴリ：ラベルが付けられる各項目のこと）
       \item 従来の手法[1]では...
         \begin{itemize}
-        \item カテゴリ同士の関連性を\notable{手動で変化}させ考慮 \\
-          \arrow \keyword{多層ニューラルネットワーク}による\notable{自動化}
-        \item 文書の数値表現であるBoWは文書内の語順を無視 \\
-          \arrow \keyword{パラグラフベクトル}の使用により表現をより正確に
+          \item カテゴリ同士の関連性を\bad{手動で変化}させ考慮 \\
+          \item 文書の数値表現であるBoWは文書内の\bad{語順を無視} \\
+        \end{itemize}
+      \item 目的 \\
+        \begin{itemize}
+          \item \keyword{多層ニューラルネットワーク}によりカテゴリ間の関連性を
+            \good{自動的に}考慮 \\
+          \item \keyword{パラグラフベクトル}の使用により
+            \good{語順や単語の位置関係を考慮}
         \end{itemize}
     \end{itemize}
   \end{block}
@@ -64,7 +70,7 @@
     \begin{subfigure}{0.35\columnwidth}
       \includegraphics[width=\textwidth]{fig/reviewpoints.png}
     \end{subfigure}
-    \caption{カテゴリ毎のラベルが付いたレビューの例}
+    \caption{カテゴリ毎のラベルが付いた文書の例（商品レビュー）}
   \end{figure}
 
 %  \begin{block}{関連研究}
@@ -76,10 +82,10 @@
 %      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
 %        \begin{itemize}
 %          \item {\normalsize パラグラフベクトル} \\
-%            \notable{語順を考慮}した文書の数値表現。
+%            \good{語順を考慮}した文書の数値表現。
 %            文書分類に有用であることが実験により示しされている。
 %          \item {\normalsize vLBL+vLBL(c)} \\
-%            \notable{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
+%            \good{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
 %            パラグラフベクトルまたは文ベクトルも同時に学習可能。
 %        \end{itemize}
 %    \end{itemize}
@@ -90,8 +96,8 @@
       \item vLBL+vLBL(c)の応用手法によって生成したパラグラフベクトル
         及び文ベクトル \\
         パラグラフベクトルに加え文ベクトルを導入したvLBL+vLBL(c)を提案し、
-        \notable{語順と単語同士の位置関係を考慮}した文書の数値表現を生成
-        \arrow 文書の意味を的確に表現
+        \good{語順と単語同士の位置関係を考慮}した文書の数値表現を生成
+        \arrow 文書の意味をより正確に表現
       \item 分類器としての多層ニューラルネットワーク
         \arrow カテゴリ間の関連性を自動的に考慮
     \end{itemize}
