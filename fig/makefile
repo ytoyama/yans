@@ -7,7 +7,7 @@ DPI = 360
 	${INKSCAPE} -zD -d ${DPI} -e ${.TARGET} ${.IMPSRC}
 
 .PHONY: all
-all: vectors.png
+all: vectors.png architecture.png
 
 .PHONY: clean
 clean:
