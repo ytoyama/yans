@@ -7,6 +7,10 @@ CONVERTED_FIGURES = vectors.png architecture.png reviewcomment.png
 .svg.png:
 	${INKSCAPE} -zD -d ${DPI} -e ${.TARGET} ${.IMPSRC}
 
+.SUFFIXES: .csv .png
+.csv.png:
+	python3 bar_chart.py ${.IMPSRC} ${.TARGET}
+
 .PHONY: all
 all: ${CONVERTED_FIGURES}
 
