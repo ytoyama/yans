@@ -1,4 +1,4 @@
-\documentclass[10pt,unicode]{beamer}
+\documentclass[8pt,unicode]{beamer}
 \usetheme{ttiposter}
 
 % geometries
@@ -22,7 +22,7 @@
 % miscellaneous commands
 
 %\definecolor{tenjugreen}{rgb}{0.4,0.8,0.4}
-\newcommand{\columnsize}{0.32}
+\newcommand{\columnscale}{0.32}
 \newcommand{\tablefontsize}{\small}
 \newcommand{\itemtitle}[1]{{\normalsize #1} \\}
 \newcommand{\arrow}{{\color{ttiblue} →}\hspace{1ex}}
@@ -43,7 +43,7 @@
 \maketitle
 \begin{columns}[t]
 
-\begin{column}{\columnsize\textwidth} % first
+\begin{column}{\columnscale\textwidth} % first
   \begin{block}{背景と目的}
     \begin{itemize}
       \item 文書を複数のカテゴリについて多値分類 \\
@@ -64,10 +64,10 @@
   \end{block}
 
   \begin{figure}
-    \begin{subfigure}{0.55\columnwidth}
+    \begin{subfigure}{0.52\textwidth}
       \includegraphics[width=\textwidth]{fig/reviewcomment.png}
     \end{subfigure}
-    \begin{subfigure}{0.35\columnwidth}
+    \begin{subfigure}{0.32\textwidth}
       \includegraphics[width=\textwidth]{fig/reviewpoints.png}
     \end{subfigure}
     \caption{カテゴリ毎のラベルが付いた文書の例（商品レビュー）}
@@ -93,18 +93,17 @@
 
   \begin{block}{提案手法}
     \begin{itemize}
-      \item vLBL+vLBL(c)の応用手法によって生成したパラグラフベクトル
-        及び文ベクトル \\
-        パラグラフベクトルに加え文ベクトルを導入したvLBL+vLBL(c)を提案し、
-        \good{語順と単語同士の位置関係を考慮}した文書の数値表現を生成
+      \item \keyword{パラグラフベクトル}に加え\keyword{文ベクトル}を導入した
+        \keyword{vLBL+vLBL(c)}を提案
+        \good{語順と単語同士の位置関係を考慮}した文書の数値表現を生成 \\
         \arrow 文書の意味をより正確に表現
-      \item 分類器としての多層ニューラルネットワーク
-        \arrow カテゴリ間の関連性を自動的に考慮
+      \item 分類器としての\keyword{多層ニューラルネットワーク} \\
+        \arrow カテゴリ間の関連性を\good{自動的に考慮}
     \end{itemize}
   \end{block}
 \end{column} % first
 
-\begin{column}{\columnsize\textwidth} % second
+\begin{column}{\columnscale\textwidth} % second
     \begin{figure}
       \includegraphics{fig/architecture.png}
       \caption{文書データからのカテゴリ毎のラベル推定}
@@ -126,8 +125,8 @@
     \end{gather*}
 
     \begin{itemize}
-      \item 現在の単語t \arrow 文脈との意味を近く
-      \item 文脈外の単語t' \arrow 文脈との意味を遠く
+      \item 現在の単語\(w_t\) \arrow 文脈との意味を近く
+      \item 文脈外の単語\(w_{t'}\) \arrow 文脈との意味を遠く
     \end{itemize}
 
     \begin{figure}
@@ -136,7 +135,7 @@
     \end{figure}
 \end{column} % second
 
-\begin{column}{\columnsize\textwidth} % third
+\begin{column}{\columnscale\textwidth} % third
   \begin{block}{予備実験}
     vLBL+vLBL(c)とSVMまたは多層NNを用い、
     従来の手法[1]と同じ多値分類問題の精度を測定
@@ -157,42 +156,39 @@
         2つのパラグラフベクトル
       \end{itemize}
 
+      \begin{table}
+        \tablefontsize
+        \caption{点数推定プログラムのパラメータ設定}
+        \label{table:parameters}
+        \begin{tabular}{l | r}
+          項目 & 値 \\
+          \hline
+          学習する単語の範囲 & 前後5単語 \\
+          単語の最少出現回数 & 5回 \\
+          ベクトルの次元数 & 400 \\
+          中間層の数 & 1 \\
+          入力層でのニューロン数 & 800個 \\
+          中間層でのニューロン数 & 200個
+        \end{tabular}
+      \end{table}
+
       \item \itemtitle{結果及び考察}
-      \begin{itemize}
-        \item 多層NNを用いた場合でも、従来の手法[1]における精度を10pp以上
-          下回っている \\
-          \arrow 表現力の高い文書の数値表現を評価や、
-          多層NNのパラメータ最適化が必要
-      \end{itemize}
+
+        \begin{table}
+          \tablefontsize
+          \caption{各手法における点数推定精度}
+          \begin{tabular}{l | r}
+            項目 & 点数推定の精度(\%) \\
+            \hline
+            実験での手法（SVM）& 33.6 \\
+            実験での手法（多層NN）& 37.7 \\
+            従来の手法[1] & 48.3
+          \end{tabular}
+        \end{table}
+
+        \arrow より表現力の高い文書の数値表現の評価や、
+        多層NNのパラメータ最適化が必要
     \end{itemize}
-
-    \begin{table}
-    \tablefontsize
-    \caption{点数推定プログラムのパラメータ設定}
-    \label{table:parameters}
-    \begin{tabular}{l | r}
-    項目 & 値 \\
-    \hline
-    学習する単語の範囲 & 前後5単語 \\
-    単語の最少出現回数 & 5回 \\
-    ベクトルの次元数 & 400 \\
-    中間層の数 & 1 \\
-    入力層でのニューロン数 & 800個 \\
-    中間層でのニューロン数 & 200個
-    \end{tabular}
-    \end{table}
-
-    \begin{table}
-    \tablefontsize
-    \caption{各手法における点数推定精度}
-    \begin{tabular}{l | r}
-    項目 & 点数推定の精度(\%) \\
-    \hline
-    実験での手法（SVM）& 33.6 \\
-    実験での手法（多層NN）& 37.7 \\
-    従来の手法[1] & 48.3
-    \end{tabular}
-    \end{table}
   \end{block} % 実験
 
   \begin{block}{今後の課題と改善策}
