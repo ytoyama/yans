@@ -5,6 +5,7 @@
 \definecolor{airforceblue}{rgb}{0.36,0.54,0.66}
 \definecolor{ttiblue}{rgb}{0.059,0.035,0.16}
 
+
 % font size
 
 \setbeamerfont*{block title}{size=\large}
@@ -14,11 +15,10 @@
 \setbeamerfont*{itemize/enumerate subbody}{parent=itemize/enumerate body}
 \setbeamerfont*{itemize/enumerate subsubbody}{parent=itemize/enumerate subbody}
 
+
 % block
 
 \setbeamercolor{block title}{fg=white,bg=airforceblue}
-%\setbeamertemplate{block begin}{\insertcaption}
-%\setbeamertemplate{block end}{}
 
 
 % itemize
@@ -36,18 +36,23 @@
 
 % title format
 
-\renewcommand{\maketitle}{
-  \centering
-  \setbeamercolor{mytitle}{fg=white,bg=ttiblue}
-  \begin{beamercolorbox}[sep=2ex,wd=1.01\paperwidth,dp=0ex,rounded=false]
-      {mytitle}
+\setbeamercolor{inverted}{fg=white,bg=ttiblue}
+\setbeamercolor{plain}{fg=black,bg=white}
+
+\setbeamertemplate{headline}{
+  \begin{beamercolorbox}[sep=4ex,wd=\paperwidth]{inverted}
     \centering
     \textbf{\huge \inserttitle}
   \end{beamercolorbox}
-  \setbeamercolor{myauthor}{fg=black,bg=white}
-  \begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{myauthor}
+  \begin{beamercolorbox}[sep=4ex,wd=\paperwidth]{plain}
     \centering
     \large \insertauthor \hspace{2em} \insertinstitute
+  \end{beamercolorbox}
+}
+
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[sep=2ex,wd=\paperwidth]{inverted}
+    \hfill\insertdate\hspace{1em}
   \end{beamercolorbox}
 }
 
