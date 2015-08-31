@@ -15,7 +15,7 @@
 \captionsetup{compatibility=false}
 \usepackage{setspace}
 \AtBeginDocument{% HACKING
-  \addtolength\abovedisplayskip{-1.5\baselineskip}
+  \addtolength\abovedisplayskip{-2\baselineskip}
   \addtolength\belowdisplayskip{-0.5\baselineskip}
 }
 
@@ -48,7 +48,7 @@
     \begin{itemize}
       \item 文書を複数のカテゴリについて多値分類 \\
         （カテゴリ：ラベルが付けられる各項目のこと）
-      \item 従来の手法[1]では...
+      \item 従来の手法では...
         \begin{itemize}
           \item カテゴリ同士の関連性を\bad{手動で変化}させ考慮 \\
           \item 文書の数値表現であるBoWは文書内の\bad{語順を無視} \\
@@ -73,23 +73,23 @@
     \caption{カテゴリ毎のラベルが付いた文書の例（商品レビュー）}
   \end{figure}
 
-%  \begin{block}{関連研究}
-%    \begin{itemize}
-%      \item 隠れ状態を用いたホテルレビューのレーティング予測 \\
-%        文書内の各文に対して推定した隠れレーティングと
-%        レビュー全体のレーティングとの繋がりを手動で変化させる \\
-%        \arrow カテゴリ間の関連性を考慮
-%      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
-%        \begin{itemize}
-%          \item {\normalsize パラグラフベクトル} \\
-%            \good{語順を考慮}した文書の数値表現。
-%            文書分類に有用であることが実験により示しされている。
-%          \item {\normalsize vLBL+vLBL(c)} \\
-%            \good{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
-%            パラグラフベクトルまたは文ベクトルも同時に学習可能。
-%        \end{itemize}
-%    \end{itemize}
-%  \end{block}
+  \begin{block}{関連研究}
+    \begin{itemize}
+      \item 隠れ状態を用いたホテルレビューのレーティング予測 \\
+        文書内の各文に対して推定した隠れレーティングと
+        レビュー全体のレーティングとの繋がりを手動で変化させる \\
+        \arrow カテゴリ間の関連性を考慮
+      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
+        \begin{itemize}
+          \item {\normalsize パラグラフベクトル} \\
+            \good{語順を考慮}した文書の数値表現。
+            文書分類に有用であることが実験により示しされている。
+          \item {\normalsize vLBL+vLBL(c)} \\
+            \good{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
+            パラグラフベクトルまたは文ベクトルも同時に学習可能。
+        \end{itemize}
+    \end{itemize}
+  \end{block}
 
   \begin{block}{提案手法}
     \begin{itemize}
@@ -156,10 +156,38 @@
         2つのパラグラフベクトル
       \end{itemize}
 
-      \begin{table}
-        \tablefontsize
-        \caption{点数推定プログラムのパラメータ設定}
-        \label{table:parameters}
+      \item \itemtitle{結果及び考察}
+        \arrow より表現力の高い文書の数値表現の評価や、
+        多層NNのパラメータ最適化が必要
+
+      %\begin{table}
+      %  \small
+      %  \caption{\small 点数推定プログラムのパラメータ設定}
+      %  \begin{tabular}{l | r}
+      %    項目 & 値 \\
+      %    \hline
+      %    学習する単語の範囲 & 前後5単語 \\
+      %    単語の最少出現回数 & 5回 \\
+      %    ベクトルの次元数 & 400 \\
+      %    中間層の数 & 1 \\
+      %    入力層でのニューロン数 & 800個 \\
+      %    中間層でのニューロン数 & 200個
+      %  \end{tabular}
+      %\end{table}
+
+      %\begin{figure}
+      %  \includegraphics[width=0.6\textwidth]{fig/result.png}
+      %  \caption{各手法における点数推定精度}
+      %\end{figure}
+    \end{itemize}
+
+    \vspace{-2em}
+    \begin{figure}
+      \centering
+      \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \small
+        \caption{\small プログラムのパラメータ設定}
         \begin{tabular}{l | r}
           項目 & 値 \\
           \hline
@@ -170,47 +198,46 @@
           入力層でのニューロン数 & 800個 \\
           中間層でのニューロン数 & 200個
         \end{tabular}
-      \end{table}
-
-      \item \itemtitle{結果及び考察}
-        \arrow より表現力の高い文書の数値表現の評価や、
-        多層NNのパラメータ最適化が必要
-
-        \begin{figure}
-          \includegraphics[width=\textwidth]{fig/result.png}
-          \caption{各手法における点数推定精度}
-        \end{figure}
-        %\begin{table}
-        %  \tablefontsize
-        %  \caption{各手法における点数推定精度}
-        %  \begin{tabular}{l | r}
-        %    項目 & 点数推定の精度(\%) \\
-        %    \hline
-        %    実験での手法（SVM）& 33.6 \\
-        %    実験での手法（多層NN）& 37.7 \\
-        %    従来の手法[1] & 48.3
-        %  \end{tabular}
-        %\end{table}
-    \end{itemize}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \vspace{0em}
+        \includegraphics[width=\textwidth]{fig/result.png}
+        \caption{\small 各手法における点数推定精度}
+      \end{minipage}
+      %\begin{minipage}[t]{0.45\textwidth}
+      %  \centering
+      %  \small
+      %  \vspace{0em}
+      %  \caption{\small 各手法における点数推定精度}
+      %  \begin{tabular}{l | r}
+      %    項目 & 精度(\%) \\
+      %    \hline
+      %    実験手法（SVM）& 33.6 \\
+      %    実験手法（多層NN）& 37.7 \\
+      %    従来の手法[1] & 48.3
+      %  \end{tabular}
+      %\end{minipage}
+    \end{figure}
   \end{block} % 実験
 
   \begin{block}{今後の課題と改善策}
     \begin{itemize}
-      \item 文ベクトルの評価
-      \item 多層NNのパラメータ最適化
+      \item vLBL+vLBL(c)における文ベクトルの評価
+      \item 多層ニューラルネットワークのパラメータ最適化
       \item 提案手法の有用性の評価
     \end{itemize}
   \end{block} % まとめ
 
   参考文献 \\
-  \begin{itemize}
+  \begin{enumerate}
   \item 藤谷宣典ら, 隠れ状態を用いたホテルレビューのレーティング予測.
   言語処理学会 第21回年次大会, 2015. \\
   \item Quoc Le et al., Distributed Representations of Sentences and Documents.
   ICML 2014, 2014. \\
   \item 森洸樹ら, 英文穴埋め問題における文章ベクトルと学習データの質の影響.
   第222回自然言語処理研究会, 2015.
-  \end{itemize}
+  \end{enumerate}
 \end{column} % third
 
 \end{columns}
