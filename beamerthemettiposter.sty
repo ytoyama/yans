@@ -26,6 +26,7 @@
 \setbeamercolor{itemize item}{fg=ttiblue}
 \setbeamercolor{itemize subitem}{fg=ttiblue}
 \setbeamercolor{itemize subsubitem}{fg=ttiblue}
+\setbeamercolor{enumerate item}{fg=black}
 
 
 % caption
@@ -36,12 +37,10 @@
 % title format
 
 \renewcommand{\maketitle}{
-  %\vspace{-16ex} % HACKING
   \centering
   \setbeamercolor{mytitle}{fg=white,bg=ttiblue}
-  %\begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{mytitle}
-  \begin{beamercolorbox}[sep=2ex,wd=1.01\paperwidth,dp=0ex,
-      rounded=false]{mytitle}
+  \begin{beamercolorbox}[sep=2ex,wd=1.01\paperwidth,dp=0ex,rounded=false]
+      {mytitle}
     \centering
     \textbf{\huge \inserttitle}
   \end{beamercolorbox}
