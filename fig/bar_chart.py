@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-plt.rc('font', family='IPAGothic', size=16)
+plt.rc('font', family='IPAGothic', size=24)
 import sys
 import csv
 
@@ -24,14 +24,23 @@ def main(csv_file, png_file):
   WIDTH = 2 / 3
   COLOR_LIST = ["#ff8888", "#ff4444", "#44ff44"]
 
-  figure, axis = plt.subplots()
+  figure, axes = plt.subplots()
+  barsets = []
   for index, result in enumerate(results):
-    plt.bar([index], [result], WIDTH, color=COLOR_LIST[index])
+    barsets.append(axes.bar([index], [result], WIDTH, color=COLOR_LIST[index]))
     index += 1
 
-  axis.set_ylabel("ラベルの推定精度/%")
-  axis.set_xticks(np.arange(len(labels)) + WIDTH / 2)
-  axis.set_xticklabels(labels)
+  axes.set_ylabel("ラベルの推定精度/%")
+  axes.set_ylim([0, 60])
+  axes.set_xticks(np.arange(len(labels)) + WIDTH / 2)
+  axes.set_xticklabels(labels)
+
+  for rects in barsets:
+    for rect in rects:
+      axes.text(rect.get_x() + rect.get_width() / 2,
+                1.05 * rect.get_height(),
+                str(int(rect.get_height())), ha='center', va='bottom', size=22)
+
   figure.patch.set_facecolor("white")
   plt.savefig(png_file)
 
