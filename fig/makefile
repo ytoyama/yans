@@ -1,7 +1,7 @@
 RM = rm -rf
 INKSCAPE = inkscape
 DPI = 360
-CONVERTED_FIGURES = vectors.png architecture.png
+CONVERTED_FIGURES = vectors.png architecture.png reviewcomment.png
 
 .SUFFIXES: .svg .png
 .svg.png:
