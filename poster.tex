@@ -9,13 +9,21 @@
 
 \usepackage{luatexja}
 \usepackage{amsmath}
+\usepackage{setspace}
+\AtBeginDocument{% HACKING
+  \addtolength\abovedisplayskip{-1.5\baselineskip}
+  \addtolength\belowdisplayskip{-0.5\baselineskip}
+}
 
 % miscellaneous commands
 
+%\definecolor{tenjugreen}{rgb}{0.4,0.8,0.4}
 \newcommand{\columnsize}{0.32}
 \newcommand{\tablefontsize}{\small}
-\newcommand{\itemtitle}[1]{{\large #1} \\}
-\newcommand{\arrow}{{\color{orange} →}\hspace{1ex}}
+\newcommand{\itemtitle}[1]{{\normalsize #1} \\}
+\newcommand{\arrow}{{\color{ttiblue} →}\hspace{1ex}}
+\newcommand{\notable}[1]{\textbf{\color{orange} #1}}
+\newcommand{\keyword}[1]{\textbf{\color{red} #1}}
 
 % title setting
 
@@ -37,66 +45,81 @@
       （カテゴリ：ラベルが付けられる各項目のこと）
       \item 従来の手法[1]
         \begin{itemize}
-        \item カテゴリ同士の関連性を手動で変化させ考慮 \\
-        \arrow 機械学習による自動化
+        \item カテゴリ同士の関連性を\notable{手動で変化}させ考慮 \\
+          \arrow \keyword{多層ニューラルネットワーク}による\notable{自動化}
         \item 文書の数値表現であるBoWは文書内の語順を無視 \\
-        \arrow パラグラフベクトルの使用により表現をより正確に
+          \arrow \keyword{パラグラフベクトル}の使用により表現をより正確に
         \end{itemize}
     \end{itemize}
   \end{block}
 
-  \begin{block}{\bf 関連研究}
+  \begin{block}{関連研究}
     \begin{itemize}
-    \item \itemtitle{カテゴリ間の関連性を用いた文書分類}
-    カテゴリ間の関連性を用いた文書分類を扱った研究に、隠れ状態を用いた
-    ホテルレビューのレーティング予測[1]がある。この研究では、文書内の各文に対して
-    推定した隠れレーティングとレビュー全体のレーティングとの繋がりを変化させ、
-    カテゴリ間の関連性を考慮した分類を行っている。
-    \item \itemtitle{パラグラフベクトル}
-    　文書の数値表現の一つとして、Leら[2]が提案したパラグラフベクトルがある。
-    この研究は、それが文書分類に有用であることを実験により示している。また、
-    パラグラフベクトルの学習手法に関する研究として、森ら[3]がある。この研究では、
-    単語同士の位置関係を考慮した単語ベクトルの学習手法vLBL+vLBL(c)について、
-    パラグラフベクトルまたは文ベクトルも同時に学習する手法を提案している。
+      \item 隠れ状態を用いたホテルレビューのレーティング予測 \\
+        文書内の各文に対して推定した隠れレーティングと
+        レビュー全体のレーティングとの繋がりを手動で変化させる \\
+        \arrow カテゴリ間の関連性を考慮
+      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
+        \begin{itemize}
+          \item {\normalsize パラグラフベクトル} \\
+            \notable{語順を考慮}した文書の数値表現。
+            文書分類に有用であることが実験により示しされている。
+          \item {\normalsize vLBL+vLBL(c)} \\
+            \notable{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
+            パラグラフベクトルまたは文ベクトルも同時に学習可能。
+        \end{itemize}
+    \end{itemize}
+  \end{block}
+
+  \begin{block}{提案手法}
+    \begin{itemize}
+      \item vLBL+vLBL(c)の応用手法によって生成したパラグラフベクトル
+        及び文ベクトル \\
+        パラグラフベクトルに加え文ベクトルを導入したvLBL+vLBL(c)を提案し、
+        \notable{語順と単語同士の位置関係を考慮}した文書の数値表現を生成
+        \arrow 文書の意味を的確に表現
+      \item 分類器としての多層ニューラルネットワーク
+        \arrow カテゴリ間の関連性を自動的に考慮
     \end{itemize}
   \end{block}
 \end{column} % first
 
 \begin{column}{\columnsize\textwidth} % second
-  \begin{block}{提案手法}
-    　文書の意味を的確に表現するためにvLBL+vLBL(c)の応用手法によって生成した
-    パラグラフベクトル及び文ベクトルを、カテゴリ間の関連性を考慮するために
-    多層ニューラルネットワーク（NN）による分類器を用いた文書分類を行う。
-    まず、パラグラフベクトルに加え文ベクトルを導入したvLBL+vLBL(c)を提案し、
-    語順と単語同士の位置関係を考慮した文書の数値表現を生成する（図1）。
-    ここで、文ベクトル学習時の目的関数gには以下の式を用いる。
+    \begin{figure}
+      \includegraphics{fig/architecture.png}
+      \caption{文書データからカテゴリ毎のラベルを推定}
+    \end{figure}
 
-    \begin{eqnarray*}
-      g = & \sum_t \left\{ \log\sigma(s(t))
+    \begin{gather*}
+      g = \sum_t \left\{ \log\sigma(s(t))
           + \sum^K_{t' \sim P_n} \log(1 - \sigma(s(t'))) \right\} \\
-      s(t) = & {\bf c}_t \cdot {\bf w}_t
-             + {\bf c}^{loc}_t \cdot {\bf w}^{loc}_t + b_t
-    \end{eqnarray*}
+      s(t) = {\bf c}_t \cdot {\bf w}_t
+             + {\bf c}^{loc}_t \cdot {\bf w}^{loc}_t + b_t \\
+      \left(
+      \begin{matrix}
+        t : 現在の単語の位置 \\
+        c_t, w_t : 文脈、単語を表すベクトル \\
+        s : 位置関係を考慮した単語と文脈の類似度 \\
+        σ : シグモイド関数
+      \end{matrix}
+      \right)
+    \end{gather*}
 
-    tは現在の単語の位置、ctとwtはそれぞれ文脈と単語を表すベクトル、sは位置関係を
-    考慮した単語と文脈の類似度である。上式により、現在の単語は文脈と意味が
-    近くなるように、文脈外の単語t'については単語の頻度分布PnについてK回サンプルし
-    文脈と意味が遠くなるように学習を行う。また、σはシグモイド関数である。
-    次に、多層NNへの入力をパラグラフベクトル、及び、各文ベクトルの
-    平均ベクトルとし、出力をカテゴリ毎のラベルとして教師有り学習を行う。
-    分類時も同様な処理を行いラベルを推定する。
+    \begin{itemize}
+      \item 現在の単語t \arrow 文脈との意味を近く
+      \item 文脈外の単語t' \arrow 文脈との意味を遠く
+    \end{itemize}
 
     \begin{figure}
       \includegraphics{fig/vectors.png}
       \caption{単語及び文、文章ベクトルの学習}
     \end{figure}
-  \end{block}
 \end{column} % second
 
 \begin{column}{\columnsize\textwidth} % third
   \begin{block}{予備実験}
-    パラグラフベクトルの学習手法としてvLBL+vLBL(c)を、分類器として
-    SVMまたは多層NNを用い、従来の手法[1]と同じ多値分類問題の精度を測定
+    vLBL+vLBL(c)とSVMまたは多層NNを用い、
+    従来の手法[1]と同じ多値分類問題の精度を測定
 
     \begin{itemize}
       \item \itemtitle{目的}
@@ -107,22 +130,19 @@
 
       \item \itemtitle{実験設定}
       \begin{itemize}
-        \item 入力データは、宿泊予約サイト楽天トラベルにおける各ホテルレビューの
-        コメント部分とそのユーザが付けた食事、サービスなど7カテゴリのレーティングの
+        \item 入力データは、各レビューのコメント部分と7カテゴリのレーティングの
         組（各カテゴリのレーティングは評価なしを含む6段階評価）
-        \item 全レビュー338,028件の内、
-        訓練データ：300,000件、評価データ：10,000件
-        \item 多層NNの入力は位置を考慮した及び考慮していない2つの
-        パラグラフベクトル
+        \item 訓練データ：300,000件、評価データ：10,000件
+        \item 多層NNの入力は位置を考慮した及び考慮していない
+        2つのパラグラフベクトル
       \end{itemize}
 
       \item \itemtitle{結果及び考察}
       \begin{itemize}
-        \item 多層NNを用いた方がSVMより4.1pp精度が高い
-        しかし、多層NNを用いた手法でも、従来の手法[1]における精度を10pp以上
-        下回っている。精度を高めるためには、文ベクトルとパラグラフベクトルを
-        組み合わせより表現力の高い文書の数値表現を評価することや、多層NNの
-        パラメータ最適化が必要である。
+        \item 多層NNを用いた場合でも、従来の手法[1]における精度を10pp以上
+          下回っている \\
+          \arrow 表現力の高い文書の数値表現を評価や、
+          多層NNのパラメータ最適化が必要
       \end{itemize}
     \end{itemize}
 
@@ -157,9 +177,9 @@
 
   \begin{block}{今後の課題と改善策}
     \begin{itemize}
-    \item 文ベクトルの評価
-    \item 多層NNのパラメータ最適化
-    \item 提案手法の有用性の評価
+      \item 文ベクトルの評価
+      \item 多層NNのパラメータ最適化
+      \item 提案手法の有用性の評価
     \end{itemize}
   \end{block} % まとめ
 
