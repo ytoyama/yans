@@ -173,21 +173,24 @@
       \end{table}
 
       \item \itemtitle{結果及び考察}
-
-        \begin{table}
-          \tablefontsize
-          \caption{各手法における点数推定精度}
-          \begin{tabular}{l | r}
-            項目 & 点数推定の精度(\%) \\
-            \hline
-            実験での手法（SVM）& 33.6 \\
-            実験での手法（多層NN）& 37.7 \\
-            従来の手法[1] & 48.3
-          \end{tabular}
-        \end{table}
-
         \arrow より表現力の高い文書の数値表現の評価や、
         多層NNのパラメータ最適化が必要
+
+        \begin{figure}
+          \includegraphics[width=\textwidth]{fig/result.png}
+          \caption{各手法における点数推定精度}
+        \end{figure}
+        %\begin{table}
+        %  \tablefontsize
+        %  \caption{各手法における点数推定精度}
+        %  \begin{tabular}{l | r}
+        %    項目 & 点数推定の精度(\%) \\
+        %    \hline
+        %    実験での手法（SVM）& 33.6 \\
+        %    実験での手法（多層NN）& 37.7 \\
+        %    従来の手法[1] & 48.3
+        %  \end{tabular}
+        %\end{table}
     \end{itemize}
   \end{block} % 実験
 
