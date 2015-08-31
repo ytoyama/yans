@@ -9,6 +9,10 @@
 
 \usepackage{luatexja}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[labelformat=empty]{caption}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
 \usepackage{setspace}
 \AtBeginDocument{% HACKING
   \addtolength\abovedisplayskip{-1.5\baselineskip}
@@ -43,7 +47,7 @@
     \begin{itemize}
       \item 文書を複数のカテゴリについて多値分類 \\
       （カテゴリ：ラベルが付けられる各項目のこと）
-      \item 従来の手法[1]
+      \item 従来の手法[1]では...
         \begin{itemize}
         \item カテゴリ同士の関連性を\notable{手動で変化}させ考慮 \\
           \arrow \keyword{多層ニューラルネットワーク}による\notable{自動化}
@@ -53,23 +57,33 @@
     \end{itemize}
   \end{block}
 
-  \begin{block}{関連研究}
-    \begin{itemize}
-      \item 隠れ状態を用いたホテルレビューのレーティング予測 \\
-        文書内の各文に対して推定した隠れレーティングと
-        レビュー全体のレーティングとの繋がりを手動で変化させる \\
-        \arrow カテゴリ間の関連性を考慮
-      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
-        \begin{itemize}
-          \item {\normalsize パラグラフベクトル} \\
-            \notable{語順を考慮}した文書の数値表現。
-            文書分類に有用であることが実験により示しされている。
-          \item {\normalsize vLBL+vLBL(c)} \\
-            \notable{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
-            パラグラフベクトルまたは文ベクトルも同時に学習可能。
-        \end{itemize}
-    \end{itemize}
-  \end{block}
+  \begin{figure}
+    \begin{subfigure}{0.55\columnwidth}
+      \includegraphics[width=\textwidth]{fig/reviewcomment.png}
+    \end{subfigure}
+    \begin{subfigure}{0.35\columnwidth}
+      \includegraphics[width=\textwidth]{fig/reviewpoints.png}
+    \end{subfigure}
+    \caption{カテゴリ毎のラベルが付いたレビューの例}
+  \end{figure}
+
+%  \begin{block}{関連研究}
+%    \begin{itemize}
+%      \item 隠れ状態を用いたホテルレビューのレーティング予測 \\
+%        文書内の各文に対して推定した隠れレーティングと
+%        レビュー全体のレーティングとの繋がりを手動で変化させる \\
+%        \arrow カテゴリ間の関連性を考慮
+%      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
+%        \begin{itemize}
+%          \item {\normalsize パラグラフベクトル} \\
+%            \notable{語順を考慮}した文書の数値表現。
+%            文書分類に有用であることが実験により示しされている。
+%          \item {\normalsize vLBL+vLBL(c)} \\
+%            \notable{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
+%            パラグラフベクトルまたは文ベクトルも同時に学習可能。
+%        \end{itemize}
+%    \end{itemize}
+%  \end{block}
 
   \begin{block}{提案手法}
     \begin{itemize}
@@ -87,7 +101,7 @@
 \begin{column}{\columnsize\textwidth} % second
     \begin{figure}
       \includegraphics{fig/architecture.png}
-      \caption{文書データからカテゴリ毎のラベルを推定}
+      \caption{文書データからのカテゴリ毎のラベル推定}
     \end{figure}
 
     \begin{gather*}
