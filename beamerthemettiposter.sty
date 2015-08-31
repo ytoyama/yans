@@ -1,18 +1,22 @@
-\mode<presentation>
+\mode<all>
 
 % colors
 
 \definecolor{airforceblue}{rgb}{0.36,0.54,0.66}
 \definecolor{ttiblue}{rgb}{0.059,0.035,0.16}
 
+% font size
+
+\setbeamerfont*{block title}{size=\large}
+\setbeamerfont*{block body}{size=\normalsize}
+\setbeamerfont*{caption}{size=\normalsize}
+\setbeamerfont*{itemize/enumerate body}{parent=,size=\normalsize}
+\setbeamerfont*{itemize/enumerate subbody}{parent=itemize/enumerate body}
+\setbeamerfont*{itemize/enumerate subsubbody}{parent=itemize/enumerate subbody}
 
 % block
 
-\setbeamerfont{block body}{size=\normalsize}
-
-\setbeamerfont{block title}{size=\large}
 \setbeamercolor{block title}{fg=white,bg=airforceblue}
-
 %\setbeamertemplate{block begin}{\insertcaption}
 %\setbeamertemplate{block end}{}
 
@@ -27,13 +31,12 @@
 % caption
 
 \setbeamertemplate{caption}{\insertcaption}
-\setbeamerfont{caption}{size=\normalsize}
 
 
 % title format
 
 \renewcommand{\maketitle}{
-  \vspace{-0.15ex} % HACKING
+  \vspace{-8ex} % HACKING
   \centering
   \setbeamercolor{mytitle}{fg=white,bg=ttiblue}
   %\begin{beamercolorbox}[sep=1ex,dp=0ex,rounded=true]{mytitle}
