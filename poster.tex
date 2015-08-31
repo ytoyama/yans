@@ -107,7 +107,7 @@
       \includegraphics{fig/architecture.png}
       \caption{文書データからのカテゴリ毎のラベル推定}
       \includegraphics{fig/vectors.png}
-      \caption{単語及び文、文章ベクトルの学習}
+      \caption{\keyword{vLBL+vLBL(c)}による単語及び文、文章ベクトルの学習}
     \end{figure}
 
     \begin{gather*}
@@ -218,11 +218,16 @@
     \end{figure}
   \end{block} % 実験
 
-  \begin{block}{今後の課題と改善策}
+  \begin{block}{まとめと今後の課題}
     \begin{itemize}
-      \item vLBL+vLBL(c)における文ベクトルの評価
-      \item 多層ニューラルネットワークのパラメータ最適化
-      \item 提案手法の有用性の評価
+      \item パラグラフベクトルと多層ニューラルネットワークとを
+        組み合わせただけでは精度が低い
+      \item 課題
+        \begin{itemize}
+          \item vLBL+vLBL(c)における文ベクトルの評価
+          \item 多層ニューラルネットワークのパラメータ最適化
+          \item 提案手法の有用性の評価
+        \end{itemize}
     \end{itemize}
   \end{block} % まとめ
 
