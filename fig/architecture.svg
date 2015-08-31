@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="65.023224mm"
@@ -21,6 +22,18 @@
    inkscape:export-ydpi="360">
   <defs
      id="defs4">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4871">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4873" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop4875" />
+    </linearGradient>
     <marker
        inkscape:isstock="true"
        style="overflow:visible"
@@ -231,6 +244,39 @@
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          transform="scale(0.4,0.4)" />
     </marker>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="14.284267"
+       height="14.284267"
+       patternTransform="translate(367.51605,619.87836)"
+       id="pattern5216">
+      <path
+         inkscape:transform-center-y="-0.34182184"
+         inkscape:transform-center-x="0.34182184"
+         d="M 12.48395,12.48395 8.037029,10.975955 4.2737521,13.784317 4.3337659,9.0890484 0.49993843,6.377791 4.9839497,4.9839496 6.3777909,0.49993843 9.0890485,4.3337659 13.784317,4.273752 10.975955,8.037029 Z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.4137167"
+         sodipodi:arg1="0.78539816"
+         sodipodi:r2="3.5355339"
+         sodipodi:r1="7.0710678"
+         sodipodi:cy="7.4839497"
+         sodipodi:cx="7.4839497"
+         sodipodi:sides="5"
+         id="path5214"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
+    </pattern>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4871"
+       id="linearGradient4877"
+       x1="415.34222"
+       y1="601.41986"
+       x2="582.60907"
+       y2="601.41986"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -239,20 +285,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.1889503"
-     inkscape:cx="134.65999"
-     inkscape:cy="85.199704"
+     inkscape:zoom="1.5478216"
+     inkscape:cx="168.54813"
+     inkscape:cy="128.00565"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:snap-bbox="true"
      inkscape:bbox-nodes="true"
-     inkscape:window-width="1364"
+     inkscape:window-width="1022"
      inkscape:window-height="752"
      inkscape:window-x="0"
      inkscape:window-y="14"
      inkscape:window-maximized="0"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -273,7 +319,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
         <cc:license
            rdf:resource="http://creativecommons.org/publicdomain/zero/1.0/" />
       </cc:Work>
@@ -295,7 +341,7 @@
      transform="translate(-227.42183,-465.19501)">
     <g
        id="g4506-5-8"
-       transform="matrix(1,0,0,0.59999984,-2.9590893e-8,213.94501)">
+       transform="matrix(1,0,0,0.59999984,-49.999997,198.94502)">
       <g
          id="g4496-5-9">
         <rect
@@ -328,30 +374,31 @@
            style="fill:#ff9450;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       </g>
     </g>
-    <g
-       id="g4519">
-      <rect
-         y="564.73096"
-         x="227.92183"
-         height="39.121292"
-         width="229.39726"
-         id="rect4478"
-         style="opacity:1;fill:#fff567;fill-opacity:1;stroke:#ff7200;stroke-width:1.00000012;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4480"
-         y="589.28644"
-         x="258.60687"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="589.28644"
-           x="258.60687"
-           id="tspan4482"
-           sodipodi:role="line">多層ニューラルネットワーク</tspan></text>
-    </g>
+    <rect
+       style="opacity:1;fill:#fff567;fill-opacity:1;stroke:none;stroke-width:1.00000012;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4478"
+       width="115.18272"
+       height="43.14193"
+       x="229.81728"
+       y="549.98816" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="287.74109"
+       y="569.54364"
+       id="text4480"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4482"
+         x="287.74109"
+         y="569.54364">多層ニューラル</tspan><tspan
+         id="tspan4288"
+         sodipodi:role="line"
+         x="287.74109"
+         y="586.73114">ネットワーク</tspan></text>
     <g
        id="g4506"
-       transform="matrix(1,0,0,0.59999984,-2.9590893e-8,153.94501)">
+       transform="matrix(1,0,0,0.59999984,-49.999997,138.94502)">
       <g
          id="g4496">
         <rect
@@ -395,30 +442,27 @@
          id="tspan4384"
          x="255"
          y="697.36218" /></text>
+    <rect
+       y="497.36227"
+       x="230"
+       height="30"
+       width="115"
+       id="rect4484"
+       style="opacity:1;fill:#b2ff67;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4486"
+       y="518.12854"
+       x="241.75423"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="518.12854"
+         x="241.75423"
+         id="tspan4488"
+         sodipodi:role="line">vLBL + vLBL(c)</tspan></text>
     <g
-       id="g4514"
-       transform="translate(0,-8)">
-      <rect
-         style="opacity:1;fill:#b2ff67;fill-opacity:1;stroke:#17ac00;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect4484"
-         width="229.39726"
-         height="39.578133"
-         x="227.92183"
-         y="502.73096" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="302.60687"
-         y="527.28644"
-         id="text4486"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan4488"
-           x="302.60687"
-           y="527.28644">vLBL + vLBL(c)</tspan></text>
-    </g>
-    <g
-       id="g4747">
+       id="g4747"
+       transform="translate(-49.999997,1.5278093e-5)">
       <path
          inkscape:connector-curvature="0"
          id="path4494-2"
@@ -449,71 +493,328 @@
          id="path4504-1"
          inkscape:connector-curvature="0" />
     </g>
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4589"
+       width="135"
+       height="14"
+       x="350.5"
+       y="538.86224" />
     <g
-       id="g4720">
-      <rect
-         y="541.07013"
-         x="272.80722"
-         height="16.29215"
-         width="127.19277"
-         id="rect4589"
-         style="opacity:1;fill:#ffffff;fill-opacity:0.75294118;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4524-0"
-         y="554.8255"
-         x="274.86188"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
-           y="554.8255"
-           x="274.86188"
-           id="tspan4526-7"
-           sodipodi:role="line">パラグラフベクトル</tspan></text>
+       id="g4300"
+       transform="translate(-9.9999744,-1.7921681)">
+      <g
+         id="g4313">
+        <rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.99999994;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4589-8"
+           width="79"
+           height="25.792162"
+           x="260.49997"
+           y="452.86227" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="265.37173"
+           y="471.82382"
+           id="text4524-0-3"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4526-7-7"
+             x="265.37173"
+             y="471.82382"
+             style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1">文書データ</tspan></text>
+      </g>
     </g>
     <g
-       id="g4712">
-      <rect
-         y="465.19501"
-         x="301.80704"
-         height="16.29215"
-         width="70.822258"
-         id="rect4589-8"
-         style="opacity:1;fill:#ffffff;fill-opacity:0.87843137;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4524-0-3"
-         y="478.95038"
-         x="303.86169"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
-           y="478.95038"
-           x="303.86169"
-           id="tspan4526-7-7"
-           sodipodi:role="line">文書データ</tspan></text>
+       id="g4728"
+       transform="translate(-45.000005,-4.9999757)">
+      <g
+         id="g4307">
+        <rect
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect4589-8-2"
+           width="94"
+           height="39.5"
+           x="285.5"
+           y="617.36224" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="335.01221"
+           y="634.02423"
+           id="text4524-0-3-2"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4526-7-7-5"
+             x="335.01221"
+             y="634.02423"
+             style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1">カテゴリ毎の</tspan><tspan
+             id="tspan4305"
+             sodipodi:role="line"
+             x="335.01221"
+             y="651.21173"
+             style="text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1">ラベル</tspan></text>
+      </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="398.69168"
+       y="534.83661"
+       id="text4318"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="398.69168"
+         y="534.83661"
+         id="tspan4322"
+         style="font-size:10px">パラグラフベクトル</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="397.82315"
+       y="474.21725"
+       id="text4324"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="397.82315"
+         y="474.21725"
+         id="tspan4332" /></text>
     <g
-       id="g4728">
+       id="g5135"
+       transform="translate(4.5000027,5.4999938)">
       <rect
-         y="617.36224"
-         x="272.80722"
-         height="16.29215"
-         width="127.19279"
-         id="rect4589-8-2"
-         style="opacity:1;fill:#ffffff;fill-opacity:0.75294118;stroke:none;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <text
-         sodipodi:linespacing="125%"
-         id="text4524-0-3-2"
-         y="631.11761"
-         x="274.86188"
+         y="437.36227"
+         x="345"
+         height="45"
+         width="105"
+         id="rect5133"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <flowRoot
+         transform="translate(179.45363,351.44186)"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
-           y="631.11761"
-           x="274.86188"
-           id="tspan4526-7-7-5"
-           sodipodi:role="line">カテゴリ毎のラベル</tspan></text>
+         id="flowRoot5123"
+         xml:space="preserve"><flowRegion
+           id="flowRegion5125"><rect
+             y="85.314514"
+             x="169.48763"
+             height="49.338718"
+             width="95.936394"
+             id="rect5127" /></flowRegion><flowPara
+           style="font-size:5px"
+           id="flowPara5129">ユーザ：ytoyama</flowPara><flowPara
+           style="font-size:5px"
+           id="flowPara5131">ホテル　の　雰囲気　は　とても　よく　食事　も　おいしかった　です　。　部屋 　に　ついても　、　窓　から　の　見晴らし　が　よく　海　が　とても　綺麗でした　。　チェックイン　当日　、　入口　の　フロア　の　汚れ　が　気になりましたが、翌日にはきちんと清掃されていました。機会があれば、また利用したいと思います。</flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 364.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 379.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 394.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 409.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5-1"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 424.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5-2"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 439.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5-3"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 454.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5-70"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 469.5,538.36227 c 0,15 0,15 0,15"
+       id="path5146-5-0"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g6067"
+       transform="translate(-14.999992,-3.9679876)">
+      <path
+         inkscape:transform-center-y="-0.34654471"
+         inkscape:transform-center-x="0.3465447"
+         d="m 373.43167,639.76194 -4.5084,-1.52885 -3.8153,2.84719 0.0608,-4.76018 -3.88683,-2.74874 4.54601,-1.41311 1.41311,-4.54601 2.74874,3.88683 4.76018,-0.0608 -2.84719,3.81531 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.4137167"
+         sodipodi:arg1="0.78539816"
+         sodipodi:r2="3.5844128"
+         sodipodi:r1="7.1688261"
+         sodipodi:cy="634.69281"
+         sodipodi:cx="368.36255"
+         sodipodi:sides="5"
+         id="path6021"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
+      <path
+         inkscape:transform-center-y="-0.34654471"
+         inkscape:transform-center-x="0.3465447"
+         d="m 418.43167,639.76194 -4.5084,-1.52885 -3.8153,2.84719 0.0608,-4.76018 -3.88683,-2.74874 4.54601,-1.41311 1.41311,-4.54601 2.74874,3.88683 4.76018,-0.0608 -2.84719,3.81531 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.4137167"
+         sodipodi:arg1="0.78539816"
+         sodipodi:r2="3.5844128"
+         sodipodi:r1="7.1688261"
+         sodipodi:cy="634.69281"
+         sodipodi:cx="413.36255"
+         sodipodi:sides="5"
+         id="path6021-9"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
+      <path
+         inkscape:transform-center-y="-0.34654471"
+         inkscape:transform-center-x="0.3465447"
+         d="m 403.43167,639.76194 -4.5084,-1.52885 -3.8153,2.84719 0.0608,-4.76018 -3.88683,-2.74874 4.54601,-1.41311 1.41311,-4.54601 2.74874,3.88683 4.76018,-0.0608 -2.84719,3.81531 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.4137167"
+         sodipodi:arg1="0.78539816"
+         sodipodi:r2="3.5844128"
+         sodipodi:r1="7.1688261"
+         sodipodi:cy="634.69281"
+         sodipodi:cx="398.36255"
+         sodipodi:sides="5"
+         id="path6021-7"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
+      <path
+         inkscape:transform-center-y="-0.34654471"
+         inkscape:transform-center-x="0.3465447"
+         d="m 388.43167,639.76194 -4.5084,-1.52885 -3.8153,2.84719 0.0608,-4.76018 -3.88683,-2.74874 4.54601,-1.41311 1.41311,-4.54601 2.74874,3.88683 4.76018,-0.0608 -2.84719,3.81531 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.4137167"
+         sodipodi:arg1="0.78539816"
+         sodipodi:r2="3.5844128"
+         sodipodi:r1="7.1688261"
+         sodipodi:cy="634.69281"
+         sodipodi:cx="383.36255"
+         sodipodi:sides="5"
+         id="path6021-8"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
+      <path
+         inkscape:transform-center-y="-0.34654471"
+         inkscape:transform-center-x="0.3465447"
+         d="m 433.43167,639.76194 -4.5084,-1.52885 -3.8153,2.84719 0.0608,-4.76018 -3.88683,-2.74874 4.54601,-1.41311 1.41311,-4.54601 2.74874,3.88683 4.76018,-0.0608 -2.84719,3.81531 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="false"
+         sodipodi:arg2="1.4137167"
+         sodipodi:arg1="0.78539816"
+         sodipodi:r2="3.5844128"
+         sodipodi:r1="7.1688261"
+         sodipodi:cy="634.69281"
+         sodipodi:cx="428.36255"
+         sodipodi:sides="5"
+         id="path6021-9-1"
+         style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         sodipodi:type="star" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="461.08643"
+       y="462.86032"
+       id="text6074"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6076"
+         x="461.08643"
+         y="462.86032"
+         style="font-size:11.25px">形態素に分割</tspan><tspan
+         sodipodi:role="line"
+         x="461.08643"
+         y="478.48532"
+         style="font-size:11.25px"
+         id="tspan6078">された文書</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="353.0603"
+       y="501.70065"
+       id="text6080"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan6082"
+         x="353.0603"
+         y="501.70065"
+         style="font-size:11.25px">単語と文書、文の意味を同時に学習し</tspan><tspan
+         sodipodi:role="line"
+         x="353.0603"
+         y="515.76318"
+         id="tspan6084"
+         style="font-size:11.25px"><tspan
+   style="fill:#ff6400;fill-opacity:1"
+   id="tspan6086">実数のベクトル</tspan>として文書の表現</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="351.77429"
+       y="571.81049"
+       id="text6092"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="351.77429"
+         y="571.81049"
+         style="font-size:11.25px"
+         id="tspan6098">各層間の重みが自動で学習される</tspan></text>
+    <g
+       id="g6140">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6130"
+         d="m 430,574.94655 -20,0 20,12.4157 z"
+         style="fill:#ff8000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:#ff8000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 430,574.94655 20,0 -20,12.4157 z"
+         id="path6132"
+         inkscape:connector-curvature="0" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.75px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#ff6400;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="350.88071"
+       y="599.31958"
+       id="text4335"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4337"
+         x="350.88071"
+         y="599.31958"
+         style="font-size:11.25px;fill:#ff6400;fill-opacity:1;"><tspan
+   style="fill:#000000;fill-opacity:1"
+   id="tspan4985">各カテゴリ同士の</tspan>関連性が自動で</tspan><tspan
+         sodipodi:role="line"
+         x="350.88071"
+         y="613.38208"
+         id="tspan4339"
+         style="font-size:11.25px;fill:#ff6400;fill-opacity:1;">学習<tspan
+   style="fill:#000000;fill-opacity:1"
+   id="tspan4983">される</tspan></tspan></text>
   </g>
 </svg>
