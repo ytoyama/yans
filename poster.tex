@@ -24,7 +24,7 @@
 %\definecolor{tenjugreen}{rgb}{0.4,0.8,0.4}
 \newcommand{\columnscale}{0.32}
 \newcommand{\tablefontsize}{\small}
-\newcommand{\itemtitle}[1]{{\normalsize #1} \\}
+\newcommand{\itemtitle}[1]{\textbf{#1} \\}
 \newcommand{\arrow}{{\color{ttiblue} →}\hspace{1ex}}
 \newcommand{\good}[1]{\textbf{\color{orange} #1}}
 \newcommand{\bad}[1]{\textbf{\color{blue} #1}}
@@ -45,14 +45,17 @@
 \begin{column}{\columnscale\textwidth} % first
   \begin{block}{背景と目的}
     \begin{itemize}
-      \item 文書を複数のカテゴリについて多値分類 \\
-        （カテゴリ：ラベルが付けられる各項目のこと）
-      \item 従来の手法では...
+      \item \itemtitle{タスク}
+        文書を複数のカテゴリについて多値分類
         \begin{itemize}
-          \item カテゴリ同士の関連性を\bad{手動で変化}させ考慮 \\
-          \item 文書の数値表現であるBoWは文書内の\bad{語順を無視} \\
+          \item カテゴリ：ラベルが付けられる各項目
+          \item 従来の手法では...
+            \begin{itemize}
+              \item カテゴリ同士の関連性を\bad{手動で変化}させ考慮
+              \item 文書の数値表現であるBoWは文書内の\bad{語順を無視}
+            \end{itemize}
         \end{itemize}
-      \item 目的 \\
+      \item \itemtitle{目的}
         \begin{itemize}
           \item \keyword{多層ニューラルネットワーク}によりカテゴリ間の関連性を
             \good{自動的に}考慮 \\
@@ -74,19 +77,16 @@
 
   \begin{block}{関連研究}
     \begin{itemize}
-      \item 隠れ状態を用いたホテルレビューのレーティング予測 \\
+      \item \itemtitle{隠れ状態を用いたホテルレビューのレーティング予測}
         文書内の各文に対して推定した隠れレーティングと
-        レビュー全体のレーティングとの繋がりを手動で変化させる \\
+        レビュー全体のレーティングとの\bad{繋がりを手動で変化}させる \\
         \arrow カテゴリ間の関連性を考慮
-      \item \keyword{vLBL+vLBL(c)}による\keyword{パラグラフベクトル}の生成 \\
-        \begin{itemize}
-          \item {\normalsize パラグラフベクトル} \\
-            \good{語順を考慮}した文書の数値表現。
-            文書分類に有用であることが実験により示されている。
-          \item {\normalsize vLBL+vLBL(c)} \\
-            \good{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
-            パラグラフベクトルまたは文ベクトルも同時に学習可能。
-        \end{itemize}
+      \item \itemtitle{パラグラフベクトル}
+        \good{語順を考慮}した文書の数値表現。
+        文書分類に有用であることが実験により示されている。
+      \item \itemtitle{vLBL+vLBL(c)}
+        \good{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
+        パラグラフベクトルまたは文ベクトルも同時に学習可能。
     \end{itemize}
   \end{block}
 
