@@ -16,7 +16,7 @@
 \usepackage{setspace}
 \AtBeginDocument{% HACKING
   \addtolength\abovedisplayskip{-2\baselineskip}
-  \addtolength\belowdisplayskip{-0.5\baselineskip}
+  \addtolength\belowdisplayskip{0\baselineskip}
 }
 
 % miscellaneous commands
@@ -33,13 +33,14 @@
 % title setting
 
 \title{カテゴリ間の関連性を利用した多層ニューラルネットワークによる文書分類}
-\author{外山洋太、三輪誠、佐々木裕}
+\author{外山洋太　三輪誠　佐々木裕}
 \institute{豊田工業大学 工学部 先端工学基礎学科}
 \date{2015/9/4}
 
 
 \begin{document}
 \begin{frame}{}
+\vspace{-8ex}
 \begin{columns}[t]
 
 \begin{column}{\columnscale\textwidth} % first
@@ -77,14 +78,14 @@
 
   \begin{block}{関連研究}
     \begin{itemize}
-      \item \itemtitle{隠れ状態を用いたホテルレビューのレーティング予測}
+      \item \itemtitle{隠れ状態を用いたホテルレビューのレーティング予測[1]}
         文書内の各文に対して推定した隠れレーティングと
         レビュー全体のレーティングとの\bad{繋がりを手動で変化}させる \\
         \arrow カテゴリ間の関連性を考慮
-      \item \itemtitle{パラグラフベクトル}
+      \item \itemtitle{パラグラフベクトル[2]}
         \good{語順を考慮}した文書の数値表現。
         文書分類に有用であることが実験により示されている。
-      \item \itemtitle{vLBL+vLBL(c)}
+      \item \itemtitle{vLBL+vLBL(c)[3]}
         \good{単語同士の位置関係を考慮}した単語ベクトルの学習手法。
         パラグラフベクトルまたは文ベクトルも同時に学習可能。
     \end{itemize}
@@ -110,11 +111,15 @@
       \caption{\keyword{vLBL+vLBL(c)}による単語及び文、文章ベクトルの学習}
     \end{figure}
 
+    {\Large
     \begin{gather*}
       g = \sum_t \left\{ \log\sigma(s(t))
           + \sum^K_{t' \sim P_n} \log(1 - \sigma(s(t'))) \right\} \\
       s(t) = {\bf c}_t \cdot {\bf w}_t
              + {\bf c}^{loc}_t \cdot {\bf w}^{loc}_t + b_t \\
+    \end{gather*}
+    }
+    \begin{gather*}
       \left(
       \begin{matrix}
         t : 現在の単語の位置 \\
@@ -147,6 +152,7 @@
 
       \item \itemtitle{実験設定}
       \begin{itemize}
+        \item 宿泊予約サイト楽天トラベルのホテルレビューデータを利用
         \item 入力データは、各レビューのコメント部分と7カテゴリのレーティングの
         組（各カテゴリのレーティングは評価なしを含む6段階評価）
         \item 訓練データ：300,000件、評価データ：10,000件
@@ -221,7 +227,7 @@
   \begin{block}{まとめと今後の課題}
     \begin{itemize}
       \item パラグラフベクトルと多層ニューラルネットワークとを
-        組み合わせただけでは精度が低い
+        組み合わせただけでは精度が不十分
       \item 課題
         \begin{itemize}
           \item vLBL+vLBL(c)における文ベクトルの評価
